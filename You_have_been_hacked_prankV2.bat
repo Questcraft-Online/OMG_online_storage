@@ -1,4 +1,5 @@
 @echo off
+cmd /c " reg delete " HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU"  /f"
 for /f "tokens=2 delims=:" %%a in ('systeminfo ^| find "System Locale:"') do set locale=%%a
 set locale=%locale: =%
 if /I "%locale:~0,5%"=="nl-NL" (
