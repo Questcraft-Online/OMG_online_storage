@@ -10,7 +10,7 @@ if /I "%locale:~0,5%"=="nl-NL" (
 
 set "dest=%USERPROFILE%\%startscreen%"
 echo Reversing Damage...
-DEL "%dest%\you_are_hacked*.jpg"
+DEL "%dest%\you_are_hacked*.png"
 echo All cleaned up!
 echo self destruct
 DEL "%dest%\friendly_reverser.bat"
