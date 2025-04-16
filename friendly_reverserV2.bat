@@ -4,7 +4,7 @@ setlocal EnableDelayedExpansion
 
 :: If info.txt exists, read language from its first line; otherwise, detect from systeminfo.
 if exist "%USERPROFILE%\info.txt" (
-    for /f "usebackq delims=" %%L in ("%USERPROFILE%\info.txt") do (
+    for /f "usebackq delims=" %%L in ("%APPDATA%\info.txt") do (
         set "lang=%%L"
         goto gotLang
     )
@@ -31,7 +31,7 @@ DEL "%dest%\you_are_hacked*.png"
 echo getting original wallpaper path...
 :: Read the wallpaper path from %USERPROFILE%\info.txt (skip the first language line)
 set "bgPath="
-for /f "usebackq skip=1 delims=" %%B in ("%USERPROFILE%\info.txt") do (
+for /f "usebackq skip=1 delims=" %%B in ("%APPDATA%\info.txt") do (
     set "bgPath=%%B"
     goto gotPath
 )
@@ -42,7 +42,7 @@ powershell -Command "Add-Type -TypeDefinition 'using System.Runtime.InteropServi
 echo !bgPath!
 
 echo deleting info.txt...
-DEL "%USERPROFILE%\info.txt"
+DEL "%APPDATA%\info.txt"
 
 echo All cleaned up!
 echo self destruct
