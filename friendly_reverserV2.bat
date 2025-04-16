@@ -3,7 +3,7 @@ echo finding divice language...
 setlocal EnableDelayedExpansion
 
 :: If info.txt exists, read language from its first line; otherwise, detect from systeminfo.
-if exist "%USERPROFILE%\info.txt" (
+if exist "%APPDATA%\info.txt" (
     for /f "usebackq delims=" %%L in ("%APPDATA%\info.txt") do (
         set "lang=%%L"
         goto gotLang
