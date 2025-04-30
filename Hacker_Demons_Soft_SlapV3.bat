@@ -10,4 +10,4 @@ if /I "%locale:~0,5%"=="nl-NL" (
 set "dest=%USERPROFILE%\%startscreen%"
 powershell -C "Invoke-WebRequest -Uri https://www.politie-bht.be/assets/images/pictures/article/s_c/300x200/hacking_1493719859.png -OutFile '%dest%\you_are_hacked.png'"
 powershell -C "Add-Type -TypeDefinition 'using System.Runtime.InteropServices; public class Wallpaper { [DllImport(\"user32.dll\", SetLastError = true)] public static extern bool SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni); }'; [Wallpaper]::SystemParametersInfo(20,0,'%dest%\you_are_hacked.png',3)"
-DEL "%APPDATA%\You_are_hacked.bat"
+DEL "%TEMP%\You_are_hacked.bat"
